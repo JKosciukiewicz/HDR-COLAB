@@ -8,12 +8,12 @@ import numpy
 # https://docs.opencv.org/4.x/d3/db7/tutorial_hdr_imaging.html
 
 
-def create_hdr(img_samples,img_exposure_times_data):
+def create_hdr(img_samples,img_exposure_times_data, rescale):
     # image exposure times in seconds of each image (from metadata)
     # !MIGHT CAUSE ISSUES FOR MRI IMAGING
     img_exposure_times=numpy.array(img_exposure_times_data, dtype=numpy.float32)
     img_list_nosize=[cv2.imread(img) for img in img_samples]
-    img_list=[cv2.resize(img, (256,256)) for img in img_list_nosize]
+    img_list=[cv2.resize(img, (rescale,rescale)) for img in img_list_nosize]
     for image in img_list:
         print(image.size)
     #Create HDR images using different methods
