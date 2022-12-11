@@ -11,6 +11,8 @@ def create_hdr(img_samples,img_exposure_times_data):
     # image exposure times in seconds of each image (from metadata)
     # !MIGHT CAUSE ISSUES FOR MRI IMAGING
     img_exposure_times=numpy.array(img_exposure_times_data, dtype=numpy.float32)
+    img_list_nosize=[cv2.imread(img) for img in img_samples]
+    img_list=[cv2.resize(img, (512,512)) for img in img_list_nosize]
     img_list=[cv2.imread(img) for img in img_samples]
     #Create HDR images using different methods
     get_debeveck(img_list,img_exposure_times)
