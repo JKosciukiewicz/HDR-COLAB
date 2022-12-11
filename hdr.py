@@ -17,9 +17,9 @@ def create_hdr(img_samples,img_exposure_times_data):
     for image in img_list:
         print(image.size)
     #Create HDR images using different methods
-    #get_debeveck(img_list,img_exposure_times)
-    #get_robertson(img_list,img_exposure_times)
-    #get_mertens(img_list)
+    get_debeveck(img_list,img_exposure_times)
+    get_robertson(img_list,img_exposure_times)
+    get_mertens(img_list)
 
 
 #Create HDR image using Debeveck method 
