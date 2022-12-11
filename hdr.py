@@ -2,6 +2,7 @@ import cv2
 from matplotlib import image
 import numpy 
 
+
 # Sample HDR image generated following these tutorials:
 # https://docs.opencv.org/3.4/d2/df0/tutorial_py_hdr.html
 # https://docs.opencv.org/4.x/d3/db7/tutorial_hdr_imaging.html
@@ -19,7 +20,7 @@ def create_hdr(img_samples,img_exposure_times_data):
     get_mertens(img_list)
 
 
-#Create HDR image using Debeveck method
+#Create HDR image using Debeveck method 
 def get_debeveck(images,image_exposures):
     merge_debevec = cv2.createMergeDebevec()    
     cal_debevec = cv2.createCalibrateDebevec()
