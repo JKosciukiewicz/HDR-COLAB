@@ -14,10 +14,12 @@ def create_hdr(img_samples,img_exposure_times_data):
     img_exposure_times=numpy.array(img_exposure_times_data, dtype=numpy.float32)
     img_list_nosize=[cv2.imread(img) for img in img_samples]
     img_list=[cv2.resize(img, (256,256)) for img in img_list_nosize]
+    for image in img_list:
+        print(image.size)
     #Create HDR images using different methods
-    get_debeveck(img_list,img_exposure_times)
-    get_robertson(img_list,img_exposure_times)
-    get_mertens(img_list)
+    #get_debeveck(img_list,img_exposure_times)
+    #get_robertson(img_list,img_exposure_times)
+    #get_mertens(img_list)
 
 
 #Create HDR image using Debeveck method 
